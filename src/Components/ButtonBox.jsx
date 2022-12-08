@@ -31,12 +31,12 @@ const ButtonBox = () => {
       });
     } else {
       setResult((prev) => {
-        console.log("default");
+        // console.log("default");
         if (prev === 0) {
-          console.log("zeroIf");
+          // console.log("zeroIf");
           return value;
         } else if (preValue === "." && value === ".") {
-          console.log("pointIf");
+          // console.log("pointIf");
           return prev;
         }
 
