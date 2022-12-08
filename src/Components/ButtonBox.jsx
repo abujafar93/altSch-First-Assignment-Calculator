@@ -2,24 +2,53 @@ import React, { useState } from "react";
 import ScreenBox from "./ScreenBox";
 
 const ButtonBox = () => {
-  // const screen = document.getElementById("showComputation");
   // const buttons = document.querySelectorAll(".btn");
-  // const equalSign = document.getElementById("total");
-  // const clearAll = document.getElementById("clear");
 
   const [result, setResult] = useState(0);
   const [backkey, setBackkey] = useState("");
+
   const clearAllInputs = () => {
     setResult(() => {
       return 0;
     }, []);
   };
 
+  //   buttons.forEach((button) => {
+  //   button.addEventListener("click", (e) => {
+  //     let value = e.target.innerHTML;
+
+  //     let preValue = backkey;
+
+  //     if (value.trim() === "=") {
+  //       setResult(() => {
+  //         return eval(result);
+  //       });
+  //     } else if (value.trim() === "CE") {
+  //       setResult((prev) => {
+  //         return prev.slice(0, -1);
+  //       });
+  //     } else {
+  //       setResult((prev) => {
+  //         if (prev === 0) {
+  //           return value;
+  //         } else if (preValue === "." && value === ".") {
+  //           return prev;
+  //         }
+
+  //         return result.includes(".") && value === "." ? prev : prev + value;
+  //       });
+  //     }
+
+  //     setBackkey(() => {
+  //       return value;
+  //     });
+  //   });
+  // });
+
   const clickHandler = (e) => {
     let value = e.target.innerHTML;
 
     let preValue = backkey;
-    console.log(preValue);
 
     if (value.trim() === "=") {
       setResult(() => {
@@ -31,12 +60,9 @@ const ButtonBox = () => {
       });
     } else {
       setResult((prev) => {
-        // console.log("default");
         if (prev === 0) {
-          // console.log("zeroIf");
           return value;
         } else if (preValue === "." && value === ".") {
-          // console.log("pointIf");
           return prev;
         }
 
@@ -47,19 +73,7 @@ const ButtonBox = () => {
     setBackkey(() => {
       return value;
     });
-
-    // equalSign.addEventListener("click", () => {
-    //   let AllInputs = value;
-    //   setResult(() => {
-    //     return value.evaluate(AllInputs);
-    //   });
-    // });
   };
-
-  // equalSign.addEventListener("click", () => {
-  //   let allInputs = ;
-  //   screen.value.evaluate(allInputs);
-  // });
 
   return (
     <>
