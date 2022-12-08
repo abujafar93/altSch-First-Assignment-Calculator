@@ -1,9 +1,9 @@
 import React from "react";
 
-const ScreenBox = () => {
+const ScreenBox = (props) => {
   return (
     <div className="screenBox">
-      <input type="text" className="showComputation" value="0" />
+      <input type="text" id="showComputation" value={props.fig} readOnly />
     </div>
   );
 };
